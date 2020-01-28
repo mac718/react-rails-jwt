@@ -12,7 +12,7 @@ class Home extends Component {
   componentDidMount() {
     fetch('/home')
       .then(res => res.json())
-      .then(json => this.setState({message: json.message}))
+      .then(json => this.setState({ message: json.message }))
   }
 
   render() {
