@@ -16,7 +16,7 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch('api/authenticate', {
+    fetch('/authenticate', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
