@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/secret', to: 'welcome#secret'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post '/authenticate', to: 'authentication#authenticate_user'
+  get '/authenticate_request', to: 'application#authenticate_request'
 end

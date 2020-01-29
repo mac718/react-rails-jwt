@@ -23,11 +23,13 @@ class Login extends Component {
         'Content-type': 'application/json'
       }
     })
-      .then(res => {
-        if(res.status === 200) {
+      .then(res => res.json())
+      .then(json => {
+        console.log(json)
+        if(json.auth_token) {
           this.props.history.push('/');
         } else {
-          const error = new Error(res.error)
+          const error = new Error(json.error)
           throw error;
         }
       })
