@@ -16,7 +16,7 @@ export default function withAuth(ComponentToProtect) {
         .then(res => res.json())
         .then(res => {
           console.log(res)
-          if(res) {
+          if(res.current_user) {
             this.setState({ loading: false })
           } else {
             const error = new Error(res.error);

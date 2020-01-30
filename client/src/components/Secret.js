@@ -11,8 +11,11 @@ class Secret extends Component {
 
   componentDidMount() {
     fetch('/secret')
-      .then(res => res.json())
-      .then(json => this.setState({ secret: json.secret }))
+      .then(res => {
+        return res.json()})
+      .then(res => {
+        console.log(res)
+        this.setState({ secret: res.secret })})
   }
 
   render() {
