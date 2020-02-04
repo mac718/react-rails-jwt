@@ -25,7 +25,6 @@ class Login extends Component {
     })
       .then(res => res.json())
       .then(json => {
-        console.log(json)
         if(json.auth_token) {
           this.props.history.push('/');
         } else {

@@ -15,12 +15,12 @@ class ApplicationController < ActionController::API
   private
 
   def authorize_api_request
-    user()
+    user
   end
 
   def user
     @user ||= User.find(decoded_auth_token[0][0]['user_id']) if decoded_auth_token
-    @user || 'Nar'
+    @user || nil
   end
 
   def decoded_auth_token
